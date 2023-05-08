@@ -3,7 +3,7 @@ $.ajax({
     method: "GET",
     data: {level: 0},
     success: function(data) {
-      initialLevel = parseInt(data.level) || 0;
+      initialLevel = parseInt(data.level);
       console.log("Initial battery level:", initialLevel);
     },
     error: function(jqXHR, textStatus, errorThrown) {
@@ -17,7 +17,7 @@ setInterval(function() {
       method: "GET",
       data: {level: 0},
       success: function(data) {
-        var currentLevel = parseInt(data.level) || 1;
+        var currentLevel = parseInt(data.level);
         var diff = currentLevel - initialLevel;
         $("#battery-level").text(currentLevel + "%");
         $("#difference").text(diff + "%");
