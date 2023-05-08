@@ -16,10 +16,10 @@ let firstTime = true
 app.enable('trust proxy');
 
 app.get('/', (req, res) => {
-  let level = req.query.level || 0;
-  var firstlevel = 0
+  let level = req.query.level;
+
   if (firstTime == true) {
-    var firstlevel = req.query.level || 0
+    var firstlevel = req.query.level
 
     firstTime = false
 }
