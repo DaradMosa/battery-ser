@@ -7,7 +7,7 @@ body {
     padding: 0;
     margin-top: 0px;
   }
-  .increase{
+  #difference{
     font-size: 140px;
 
     padding: 0;
@@ -16,7 +16,7 @@ body {
     margin-bottom: 70px;
 
   }
-  .level{
+  #battery-level{
     font-size: 190px;
 
     padding: 0;
