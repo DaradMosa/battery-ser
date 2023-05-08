@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    font-size: 60px;
+    padding: 0;
+    margin-top: 0px;
+  }
+  .increase{
+    font-size: 140px;
+
+    padding: 0;
+    margin: 0px;
+    color: rgb(119, 197, 119);
+    margin-bottom: 70px;
+
+  }
+  .level{
+    font-size: 190px;
+
+    padding: 0;
+    margin: 0px;
+    margin-top: 70px;
+
+  }
