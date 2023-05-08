@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
  let difference = firstlevel - level
   // store the battery level in a database or file system
   console.log('Received battery level:', level);
-  res.render('index',{level , firstlevel});
+  res.render('index',{ levels: level , firstlevels : firstlevel});
 });
 
 app.listen(process.env.PORT || 5000 , () => {
