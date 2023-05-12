@@ -4,7 +4,6 @@
 <script type="application/javascript">
       window.addEventListener("load",() => {
         var initialLevel = 0; 
-        var cont = 0;
     setInterval(() => {
       $.ajax({
         url: "https://battery-lvl.onrender.com/lvl",
@@ -19,11 +18,6 @@
           console.log(diff);
           $("#battery-level").text(currentLevel + "%");
           $("#difference").text(diff + "%");
-          count++;
-          if (count > 60) {
-            count = 0;
-            initialLevel = 0;
-          }
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
