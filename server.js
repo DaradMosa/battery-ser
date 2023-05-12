@@ -14,7 +14,7 @@ app.use(express.static("public"))
 app.enable('trust proxy');
 var level = 0;
 app.get('/', (req, res) => {
-   level = req.query.level;
+   level = req.query.level || 0;
   console.log('Received battery level:', level);
   res.render('index');
 });
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.get('/lvl', (req, res) => {
    level = req.query.level;
 
-  res.send(level.toString());
+  res.send(level);
 });
 
 app.listen(process.env.PORT || 5000 , () => {
