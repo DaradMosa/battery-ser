@@ -2,20 +2,19 @@
 <p id="difference">0</p>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="application/javascript">
-      window.addEventListener("load",() => {
         var initialLevel = 0; 
+      window.addEventListener("load",() => {
     setInterval(() => {
       $.ajax({
         url: "https://battery-lvl.onrender.com/lvl",
         method: "GET",
         success: function(lvl) {
-
-          
           if (!initialLevel) {
-              initialLevel = parseInt(lvl);
+              initialLevel = parseFloat(lvl);
           }
-          var currentLevel = parseInt(lvl);
-          var diff = currentLevel - initialLevel;
+          var currentLevel = parseFloat(lvl);
+          var diff;
+          diff = currentLevel - initialLevel;
           $("#battery-level").text(currentLevel + "%");
           $("#difference").text(diff + "%");
         },
