@@ -3,13 +3,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="application/javascript">
       window.addEventListener("load",() => {
+        var initialLevel = 0; 
     setInterval(() => {
       $.ajax({
         url: "https://battery-lvl.onrender.com/lvl",
         method: "GET",
         success: function(lvl) {
 
-          var initialLevel 
+          
           if (!initialLevel) {
               initialLevel = parseInt(lvl);
           }
