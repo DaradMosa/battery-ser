@@ -17,7 +17,7 @@
           diff = currentLevel - initialLevel;
           console.log(diff);
           $("#battery-level").text(currentLevel + "%");
-          $("#difference").text(46 + "%");
+          $("#difference").text(diff + "%");
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
