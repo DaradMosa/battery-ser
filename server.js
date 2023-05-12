@@ -3,7 +3,6 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts")
 const cors = require('cors');
 
-// enable CORS
 app.use(cors());
 app.set("view engine", "ejs")
 app.set("views",__dirname + "/views")
