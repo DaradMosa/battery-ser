@@ -15,6 +15,7 @@
           var currentLevel = parseFloat(lvl);
           var diff;
           diff = currentLevel - initialLevel;
+          console.log(diff);
           $("#battery-level").text(currentLevel + "%");
           $("#difference").text(diff + "%");
         },
