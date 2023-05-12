@@ -1,35 +1,4 @@
-<p id="battery-level"></p>
-<p id="difference"></p>
+<p id="battery-level">0</p>
+<p id="difference">0</p>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $.ajax({
-    url: "https://battery-lvl.onrender.com",
-    method: "GET",
-    data: {level: 0},
-    success: function(data) {
-      initialLevel = parseInt(data.level);
-      console.log("Initial battery level:", initialLevel);
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log(textStatus, errorThrown);
-    }
-  });
-
-setInterval(function() {
-    $.ajax({
-      url: "https://battery-lvl.onrender.com",
-      method: "GET",
-      data: {level: 0},
-      success: function(data) {
-        var currentLevel = parseInt(data.level);
-        var diff = currentLevel - initialLevel;
-        $("#battery-level").text(currentLevel + "%");
-        $("#difference").text(diff + "%");
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      }
-    });
-  }, 500);
-</script>
+<script src="../script.js"></script>

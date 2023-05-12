@@ -1,29 +1,22 @@
-$.ajax({
-    url: "https://battery-lvl.onrender.com",
-    method: "GET",
-    data: {level: 0},
-    success: function(data) {
-      initialLevel = parseInt(data.level);
-      console.log("Initial battery level:", initialLevel);
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log(textStatus, errorThrown);
-    }
-  });
+  window.addEventListener("load",() => {
+    setInterval(() => {
+      $.ajax({
+        url: "https://battery-lvl.onrender.com/lvl",
+        method: "GET",
+        success: function(lvl) {
 
-setInterval(function() {
-    $.ajax({
-      url: "https://battery-lvl.onrender.com",
-      method: "GET",
-      data: {level: 0},
-      success: function(data) {
-        var currentLevel = parseInt(data.level);
-        var diff = currentLevel - initialLevel;
-        $("#battery-level").text(currentLevel + "%");
-        $("#difference").text(diff + "%");
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      }
-    });
-  }, 500);
+          var initialLevel 
+          if (!initialLevel) {
+              initialLevel = parseInt(lvl);
+          }
+          var currentLevel = parseInt(lvl);
+          var diff = currentLevel - initialLevel;
+          $("#battery-level").text(currentLevel + "%");
+          $("#difference").text(diff + "%");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        }
+      });
+    },500);
+})

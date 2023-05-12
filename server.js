@@ -11,15 +11,18 @@ app.set("layout","layouts/layout")
 app.use(expressLayouts)
 app.use(express.static("public"))
 
-let firstTime = true
-
 app.enable('trust proxy');
-
+var level = 0;
 app.get('/', (req, res) => {
-  let level = req.query.level;
-
+   level = req.query.level;
   console.log('Received battery level:', level);
   res.render('index');
+});
+
+app.get('/lvl', (req, res) => {
+   level = req.query.level;
+
+  res.send(level.toString());
 });
 
 app.listen(process.env.PORT || 5000 , () => {
