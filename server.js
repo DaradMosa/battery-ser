@@ -20,9 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/lvl', (req, res) => {
-   level = req.query.level;
-
-  res.send(level);
+  res.send(level.toString());
 });
 
 app.listen(process.env.PORT || 5000 , () => {
